@@ -6,6 +6,7 @@
 	<title>Camagru</title>
 
 	<link rel="stylesheet" href="public/css/index.css">
+	<link rel="stylesheet" href="public/css/auth.css">
 	<script src="public/js/global.js"></script>
 </head>
 <body>
@@ -23,15 +24,15 @@
 </html>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", function() {
 	if(window.location.hash) {
 		var elem = document.querySelectorAll("a[href=\""+window.location.hash+"\"]");
 		elem[0].classList.add("active");
-		load(".container", "routes/"+ window.location.hash.substr(1));
+		load(".container", "routes/"+ window.location.hash.substr(1)+"/index.php");
 	} else {
 		var elem = document.querySelectorAll("a[href=\"#home\"]");
 		elem[0].classList.add("active");
-		load(".container", "routes/home");
+		load(".container", "routes/home/index.php");
 	}
 
 	var nav_links = document.getElementsByClassName("nav-item");
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				element2.classList.remove('active');
 			}
 			element.classList.add('active');
-			load(".container", "routes/"+element.getAttribute("href").substr(1));
+			load(".container", "routes/"+element.getAttribute("href").substr(1)+"index.php");
 		})
 	}
 });
