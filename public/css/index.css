@@ -1,10 +1,33 @@
 * {
 	-webkit-transition: all 0.5s; /* Safari prior 6.1 */
 	transition: all 0.5s;
+	color: #ffffff;
 }
 
 body {
 	background-color: black;
+	margin: 0;
+	padding: 0;
+}
+
+#error-container {
+	background-color: #ff6262;
+	margin: 0.6rem;
+	padding: 0.2rem;
+	text-align: center;
+	color: black;
+	opacity: 0;
+	overflow: hidden;
+}
+
+#success-container {
+	background-color: #b5ff84;
+	margin: 0.6rem;
+	padding: 0.2rem;
+	text-align: center;
+	color: black;
+	overflow: hidden;
+	opacity: 0;
 }
 
 .navbar {
@@ -29,7 +52,6 @@ body {
 
 .navbar li a {
 	display: block;
-	color: #ffffff;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -44,8 +66,8 @@ body {
 }
 
 .container {
-	color: #ffffff;
-	padding-top: 10px;
+	padding: 10px;
+	padding-top: 2rem;
 }
 
 input {
@@ -62,7 +84,6 @@ input {
 input[type=submit] {
 	padding: 5px;
 	background-color: black;
-	color: white;
 	cursor: pointer;
 }
 

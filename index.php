@@ -11,13 +11,15 @@
 <body>
 	<nav class="navbar">
 		<ul>
-		<li><a class="nav-item" href="#home">Home</a></li>
-		<li><a class="nav-item" href="#gallery">Gallery</a></li>
-		<li><a class="nav-item" href="#booth">Booth</a></li>
-		<li style="float:right"><a class="nav-item" href="#auth">Login or Signup</a></li>
-		<li style="float:right"><a class="nav-item" href="#lgout">Logout</a></li>
+			<li><a class="nav-item" href="#home">Home</a></li>
+			<li><a class="nav-item" href="#gallery">Gallery</a></li>
+			<li><a class="nav-item" href="#booth">Booth</a></li>
+			<li style="float:right"><a class="nav-item" href="#auth">Login or Signup</a></li>
+			<li style="float:right"><a class="nav-item" href="#logout">Logout</a></li>
 		</ul>
 	</nav>
+	<div id="error-container"></div>
+	<div id="success-container"></div>
 	<div class="container" id="dd"></div>
 </body>
 </html>
