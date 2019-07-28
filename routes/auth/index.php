@@ -7,9 +7,10 @@ $g = new General();
 $g->CheckRequest("XMLHttpRequest");
 
 ?>
+<link rel="stylesheet" href="public/css/auth.css">
 <div class="auth-card">
 	<div class="auth-header">
-		login
+		Login
 	</div>
 	<div class="auth-container">
 		<ul class="auth-switch" id="auth-switch">
@@ -45,8 +46,17 @@ document.getElementById("auth-switch").querySelectorAll("li").forEach(element =>
 			document.getElementById("auth-"+ elem.id.substr(4)).style.display = "none";
 		})
 		element.classList.add("active");
-		console.log(element.id.substr(4))
+		document.getElementsByClassName("auth-header")[0].innerHTML = element.innerHTML;
 		document.getElementById("auth-"+ element.id.substr(4)).style.display = "block";
+	})
+});
+
+Array.prototype.slice.call(document.getElementsByTagName("input")).forEach(element => {
+	element.addEventListener("input", function () {
+		console.log("sdsds");
+	})
+	element.addEventListener("focusout", function () {
+		console.log("focus");
 	})
 });
 </script>

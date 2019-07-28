@@ -1,3 +1,8 @@
+* {
+	-webkit-transition: all 0.5s; /* Safari prior 6.1 */
+	transition: all 0.5s;
+}
+
 body {
 	background-color: black;
 }
@@ -6,36 +11,36 @@ body {
 }
 
 .navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #ff416c;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #ff416c;
 }
 
 .navbar li {
-  float: left;
-  border-right:1px solid rgb(0, 0, 0);
+	float: left;
+	border-right: 1px solid rgb(0, 0, 0);
 }
 
 .navbar li:last-child {
-  border-right: none;
+	border-right: none;
 }
 
 .navbar li a {
-  display: block;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+	display: block;
+	color: #ffffff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 .navbar li a:hover:not(.active) {
-  background-color: #111;
+	background-color: #111;
 }
 
 .navbar .active {
-  background-color: #1a1a1a;
+	background-color: #1a1a1a;
 }
 
 .container {
@@ -44,39 +49,38 @@ body {
 }
 
 input {
-  border: none;
-  height: 2rem;
-  border-radius: 6px;
-  min-width: 300px;
-  font-size: 1em;
-  color: #1a1a1a;
-  padding: 10px;
-  margin: 10px;
+	border: none;
+	height: 2rem;
+	border-radius: 6px;
+	min-width: 300px;
+	font-size: 1em;
+	color: #1a1a1a;
+	padding: 10px;
+	margin: 10px;
 }
 
 input[type=submit] {
-  padding: 5px;
-  background-color: black;
-  color: white;
-  cursor: pointer;
+	padding: 5px;
+	background-color: black;
+	color: white;
+	cursor: pointer;
 }
 
-
 @media (max-width: 575.98px) {
-  html {
-    font-size: 0.6em;
-  }
-  .navbar li a {
-    padding: 10px 10px;
-  }
+	html {
+		font-size: 0.6em;
+	}
+	.navbar li a {
+		padding: 10px 10px;
+	}
 
-  input {
-    height: 1.8rem;
-    width: auto;
-    min-width: 100%;
-    margin: 6px;
-  }
- }
+	input {
+		height: 1.8rem;
+		width: auto;
+		min-width: 100%;
+		margin: 6px;
+	}
+}
 
 /* // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) { ... }
