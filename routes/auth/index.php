@@ -25,14 +25,14 @@ $g->CheckRequest("XMLHttpRequest");
 				<input type="text" name="username" id="username" placeholder="Username">
 				<input type="password" name="password" id="password" placeholder="Password">
 				<input type="password" name="password2" id="password2" placeholder="Confirm Password">
-				<input type="submit" value="Sign Up">
+				<input name="submit" type="submit" value="Sign Up">
 			</form>
 		</div>
 		<div class="auth-login" id="auth-login">
 			<form action="" method="post">
 				<input type="text" name="lusername" id="lusername" placeholder="Username">
 				<input type="password" name="lpassword" id="lfirstname" placeholder="Password">
-				<input type="submit" value="Login">
+				<input type="submit" name="submit" value="Login">
 			</form>
 		</div>
 	</div>
@@ -53,10 +53,20 @@ document.getElementById("auth-switch").querySelectorAll("li").forEach(element =>
 
 Array.prototype.slice.call(document.getElementsByTagName("input")).forEach(element => {
 	element.addEventListener("input", function () {
-		console.log("sdsds");
+		console.log(element.name);
 	})
 	element.addEventListener("focusout", function () {
-		console.log("focus");
+	})
+});
+
+Array.prototype.slice.call(document.getElementsByTagName("form")).forEach(form => {
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+		var formData = getFormData(form)
+		post("routes/auth/login.php", formData)
+		.then(res => {
+			console.log(formData)
+		});
 	})
 });
 </script>

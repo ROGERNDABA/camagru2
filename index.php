@@ -27,11 +27,11 @@ window.addEventListener("DOMContentLoaded", function() {
 	if(window.location.hash) {
 		var elem = document.querySelectorAll("a[href=\""+window.location.hash+"\"]");
 		elem[0].classList.add("active");
-		load(".container", "routes/"+ window.location.hash.substr(1)+"/index.php");
+		load(".container", "routes/"+ window.location.hash.substr(1));
 	} else {
 		var elem = document.querySelectorAll("a[href=\"#home\"]");
 		elem[0].classList.add("active");
-		load(".container", "routes/home/index.php");
+		load(".container", "routes/home");
 	}
 
 	var nav_links = document.getElementsByClassName("nav-item");
@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", function() {
 				element2.classList.remove('active');
 			}
 			element.classList.add('active');
-			load(".container", "routes/"+element.getAttribute("href").substr(1)+"/index.php");
+			load(".container", "routes/"+element.getAttribute("href").substr(1));
 		})
 	}
 });
