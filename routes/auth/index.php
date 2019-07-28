@@ -13,10 +13,10 @@ $g->CheckRequest("XMLHttpRequest");
 	</div>
 	<div class="auth-container">
 		<ul class="auth-switch" id="auth-switch">
-			<li class="active">Login</li>
-			<li>Sign Up</li>
+			<li id="tab-login" class="active">Login</li>
+			<li id="tab-sign-up">Sign Up</li>
 		</ul>
-		<div class="auth-sign-up">
+		<div class="auth-sign-up" id="auth-sign-up">
 			<form action="" method="post">
 				<input type="text" name="firstname" id="firstname" placeholder="Firstname">
 				<input type="text" name="lastname" id="lastname" placeholder="Lastname">
@@ -27,7 +27,7 @@ $g->CheckRequest("XMLHttpRequest");
 				<input type="submit" value="Sign Up">
 			</form>
 		</div>
-		<div class="auth-login">
+		<div class="auth-login" id="auth-login">
 			<form action="" method="post">
 				<input type="text" name="lusername" id="lusername" placeholder="Username">
 				<input type="password" name="lpassword" id="lfirstname" placeholder="Password">
@@ -36,8 +36,17 @@ $g->CheckRequest("XMLHttpRequest");
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-document.addEventListener("load", function () {
-	window.alert("dfd");
+<script>
+document.getElementById("auth-login").style.display = "block";
+document.getElementById("auth-switch").querySelectorAll("li").forEach(element => {
+	element.addEventListener("click", function () {
+		document.getElementById("auth-switch").querySelectorAll("li").forEach(elem => {
+			elem.classList.remove("active");
+			document.getElementById("auth-"+ elem.id.substr(4)).style.display = "none";
+		})
+		element.classList.add("active");
+		console.log(element.id.substr(4))
+		document.getElementById("auth-"+ element.id.substr(4)).style.display = "block";
+	})
 });
 </script>

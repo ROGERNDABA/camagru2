@@ -44,7 +44,7 @@ window.addEventListener("DOMContentLoaded", function() {
 				element2.classList.remove('active');
 			}
 			element.classList.add('active');
-			load(".container", "routes/"+element.getAttribute("href").substr(1)+"index.php");
+			load(".container", "routes/"+element.getAttribute("href").substr(1)+"/index.php");
 		})
 	}
 });
