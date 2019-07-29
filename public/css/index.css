@@ -84,7 +84,13 @@ input {
 input[type=submit] {
 	padding: 5px;
 	background-color: black;
+	color: #ffffff;
 	cursor: pointer;
+}
+
+input[type=submit]:disabled {
+  background: #5f5f5f;
+  color: #5a5a5a;
 }
 
 @media (max-width: 575.98px) {

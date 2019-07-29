@@ -6,6 +6,7 @@
 	<title>Camagru</title>
 
 	<link rel="stylesheet" href="public/css/index.css">
+	<link rel="stylesheet" href="public/css/auth.css">
 	<script src="public/js/global.js"></script>
 </head>
 <body>
