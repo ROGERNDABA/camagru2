@@ -14,7 +14,7 @@ $g->CheckRequest("XMLHttpRequest");
 	<ul class="form-error" id="form-error"></ul>
 	<div class="auth-container">
 		<ul class="auth-switch" id="auth-switch">
-			<li id="tab-login" >Login</li>
+			<li id="tab-login">Login</li>
 			<li id="tab-sign-up">Sign Up</li>
 		</ul>
 		<div class="auth-sign-up" id="auth-sign-up">
@@ -30,8 +30,8 @@ $g->CheckRequest("XMLHttpRequest");
 		</div>
 		<div class="auth-login" id="auth-login">
 			<form action="" method="post">
-				<input type="text" name="lusername" id="lusername" placeholder="Username">
-				<input type="password" name="lpassword" id="lfirstname" placeholder="Password">
+				<input type="email" name="lemail" id="lemail" placeholder="Email">
+				<input type="password" name="lpassword" id="lpassword" placeholder="Password">
 				<input type="submit" name="submit" value="Login" disabled="disabled">
 			</form>
 		</div>
@@ -46,6 +46,7 @@ if (localStorage.getItem("form")) {
 } else {
 	document.getElementById("auth-login").style.display = "block";
 	localStorage.setItem("form", "login");
+	document.getElementById("tab-login").classList.add("active");
 }
 document.getElementById("auth-switch").querySelectorAll("li").forEach(element => {
 	element.addEventListener("click", function () {
@@ -119,13 +120,14 @@ Array.prototype.slice.call(document.getElementsByTagName("form")).forEach(form =
 				} else if(response.error) {
 					error(res);
 				} else {
-					window.location.href = "http://"+window.location.hostname;
+					window.location.href = "http://"+window.location.hostname+":8080#gallery";
 				}
 			} catch (e) {
 				if(res.trim()) {
 					error(res);
 				} else {
-					window.location.href = "http://"+window.location.hostname;
+					window.location.href = "http://"+window.location.hostname+":8080#gallery";
+					location.reload();
 				}
 			}
 		});

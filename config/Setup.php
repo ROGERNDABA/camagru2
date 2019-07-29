@@ -3,7 +3,7 @@ class Init {
     private $conn;
     private $servername = "localhost";
     private $username = "root";
-    private $password = "Rootroot2";
+    private $password = "Rootroot3%";
     function __construct($db) {
         try {
             $this->conn = new PDO("mysql:host=$this->servername;dbname=$db", $this->username, $this->password);
