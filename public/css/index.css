@@ -17,7 +17,6 @@ body {
 	text-align: center;
 	color: black;
 	opacity: 0;
-	overflow: hidden;
 }
 
 #success-container {
@@ -26,7 +25,6 @@ body {
 	padding: 0.2rem;
 	text-align: center;
 	color: black;
-	overflow: hidden;
 	opacity: 0;
 }
 

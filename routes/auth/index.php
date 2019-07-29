@@ -109,10 +109,25 @@ Array.prototype.slice.call(document.getElementsByTagName("form")).forEach(form =
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
 		var formData = getFormData(form)
-		console.log(formData)
-		post("routes/auth/sign-up.php", formData)
+		post("routes/auth/"+form.parentElement.id.substr(5)+".php", formData)
 		.then(res => {
-			console.log(res);
+			try {
+				var response = JSON.parse(res);
+				if (response.form_error) {
+					var errElem = document.getElementById("form-error");
+					errElem.innerHTML = response.form_error;
+				} else if(response.error) {
+					error(res);
+				} else {
+					window.location.href = "http://"+window.location.hostname;
+				}
+			} catch (e) {
+				if(res.trim()) {
+					error(res);
+				} else {
+					window.location.href = "http://"+window.location.hostname;
+				}
+			}
 		});
 	})
 });

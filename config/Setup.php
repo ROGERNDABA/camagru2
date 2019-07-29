@@ -2,7 +2,7 @@
 class Init {
     private $conn;
     private $servername = "localhost";
-    private $username = "admin";
+    private $username = "root";
     private $password = "Rootroot2";
     function __construct($db) {
         try {

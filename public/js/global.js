@@ -44,9 +44,13 @@ function getFormData(form) {
 }
 
 function error(errorMsg) {
+	var errCont = document.getElementById("error-container");
 	setTimeout(function () {
-		alert("Hello");
+		errCont.style.opacity = 1;
+		errCont.innerHTML = errorMsg;
 	}, 3000);
+	errCont.style.opacity = 0;
+	errCont.innerHTML = "";
 }
 
 function toTitleCase(str) {
